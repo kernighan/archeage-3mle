@@ -65,6 +65,7 @@
 * [Scarborough Fair](https://www.youtube.com/watch?v=ZlQKh3xHoV4)
 * [Scotland The Brave](https://www.youtube.com/watch?v=GowMI4wvmU4)
 * [Shape Of You - Ed Sheeran](https://www.youtube.com/watch?v=JGwWNGJdvx8)
+* [Shelter - Porter Robinson and Madeon](https://www.youtube.com/watch?v=uNze7yakEfE)
 * [Signe - Eric Clapton](https://www.youtube.com/watch?v=ebX6f7FW7Uo)
 * [Simple Man - Lynyrd Skynyrd](https://www.youtube.com/watch?v=mXLeNv4VVUo)
 * [Smells Like Teen Spirit - Nirvana](https://www.youtube.com/watch?v=hTWKbfoikeg)
