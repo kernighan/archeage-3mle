@@ -2,6 +2,7 @@
 
 * [All Of Me - John Legend](https://www.youtube.com/watch?v=450p7goxZqg)
 * [Always On My Mind - Pet Shop Boys](https://www.youtube.com/watch?v=wDe60CbIagg)
+* [Always On My Mind - Willie Nelson](https://www.youtube.com/watch?v=R7f189Z0v0Y)
 * [Another One Bites The Dust - Queen](https://www.youtube.com/watch?v=rY0WxgSXdEE)
 * Another One Bites The Dust - Queen (Jazzy)
 * [Asturias - Isaac Albéniz](https://www.youtube.com/watch?v=oEfFbuT3I6A)
