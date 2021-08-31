@@ -16,3 +16,5 @@ General notes on using MML in archeage
 
 * Arpeggiated chords can generally be represented by using 32nd note rests between each member of the chord.  The lowest note would have its full length, the second note would start with a 32nd note rest, followed by the rest of the duration, the 3rd note with a 16th note rest (32nd rest twice) and then the rest of the duration, etc.  These obviously take one track per note, so a 3-note arpeggiated chord requires 3 tracks.  This works well with eigth note up to whole note arpeggiated chords.  For 16th note arpeggiated chords, 64th note rests need to be used.
 
+
+* Max tempo is 259
