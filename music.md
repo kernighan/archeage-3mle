@@ -34,6 +34,7 @@
 * [Heart-Shaped Box - Nirvana from Westworld Season 2](https://www.youtube.com/watch?v=LDS8SeO6hyg)
 * [Here Comes The Rain Again - Eurythmics](https://www.youtube.com/watch?v=TzFnYcIqj6I)
 * [Hey There, Delilah - Plain White T's](https://www.youtube.com/watch?v=h_m-BjrxmgI)
+* [Hotel California - The Eagles](https://www.youtube.com/watch?v=aZHiG6Oua0w)
 * [House of the Rising Sun - The Animals](https://www.youtube.com/watch?v=0Fy7opKu46c)
 * I Woke Up This Morning
 * [I'm Blue - Eiffel 65](https://www.youtube.com/watch?v=U0fk5L1ifbo)
@@ -47,6 +48,7 @@
 * [(Let Me Be Your) Teddy Bear - Elvis Presley](https://www.youtube.com/watch?v=NkDbk-egHH4)
 * [Let's Dance - Chris Montez](https://www.youtube.com/watch?v=9EjJq9c1maI)
 * [Livin' On A Prayer - Bon Jovi](https://www.youtube.com/watch?v=lDK9QqIzhwk)
+* [L-O-V-E - Nat King Cole](https://www.youtube.com/watch?v=vbqjAHigIgg)
 * [Love Me Tender - Elvis Presley](https://www.youtube.com/watch?v=2lD711_Xh8s)
 * [Mamma's Don't Let Your Babies Grow Up To Be Cowboys - Willie Nelson](https://www.youtube.com/watch?v=ZaWCepCWDyY)
 * [No Holly For Miss Quinn - Enya](https://www.youtube.com/watch?v=dPmu46TpCxs)
