@@ -90,5 +90,6 @@
 * [Total Eclipse of the Heart - Bonnie Tyler](https://www.youtube.com/watch?v=lcOxhH8N3Bo)
 * [Trouble In Mind - Janis Joplin](https://www.youtube.com/watch?v=l0BgJSRGRmc)
 * [Watermark - Enya](https://www.youtube.com/watch?v=bPCdsa7hS7M)
+* Welcome To The Jungle (Jazzy) - Guns N Roses
 * [With Or Without You - U2](https://www.youtube.com/watch?v=ujNeHIo7oTE)
 * [(You Want To) Make A Memory - Bon Jovi](https://www.youtube.com/watch?v=nWuZMBtrc1E)
