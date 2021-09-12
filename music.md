@@ -1,5 +1,6 @@
 # Ivette's Archeage music list
 
+* [All About That Bass - Meghan Trainor](https://www.youtube.com/watch?v=7PCkvCPvDXk)
 * [All Of Me - John Legend](https://www.youtube.com/watch?v=450p7goxZqg)
 * [Always On My Mind - Pet Shop Boys](https://www.youtube.com/watch?v=wDe60CbIagg)
 * [Always On My Mind - Willie Nelson](https://www.youtube.com/watch?v=R7f189Z0v0Y)
@@ -22,6 +23,7 @@
 * [Down Under - Men At Work](https://www.youtube.com/watch?v=XfR9iY5y94s)
 * [Elements - Lindsey Stirling](https://www.youtube.com/watch?v=sf6LD2B_kDQ)
 * [Eternal Flame - The Bangles](https://www.youtube.com/watch?v=PSoOFn3wQV4)
+* [Every Breath You Take](https://www.youtube.com/watch?v=OMOGaugKpzs)
 * [Fast Car - Tracy Chapman](https://www.youtube.com/watch?v=AIOAlaACuv4)
 * [Flower Of Scotland](https://www.youtube.com/watch?v=RPaJhlIIYjM)
 * [For The Love A Princess - Braveheart Soundtrack](https://www.youtube.com/watch?v=fk8323r577w)
