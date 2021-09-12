@@ -28,6 +28,7 @@
 * [Flower Of Scotland](https://www.youtube.com/watch?v=RPaJhlIIYjM)
 * [For The Love A Princess - Braveheart Soundtrack](https://www.youtube.com/watch?v=fk8323r577w)
 * [Free Bird - Lynyrd Skynyrd](https://www.youtube.com/watch?v=3mExcPmReUM)
+* [Girl on Fire - Alicia Keys](https://www.youtube.com/watch?v=J91ti_MpdHA)
 * [Girls Just Want To Have Fun](https://www.youtube.com/watch?v=PIb6AZdTr-A)
 * [Give Me One Reason - Tracy Chapman](https://www.youtube.com/watch?v=V6hQ9HSKlIE)
 * [Guitar Boogie]
