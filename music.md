@@ -24,6 +24,7 @@
 * [Elements - Lindsey Stirling](https://www.youtube.com/watch?v=sf6LD2B_kDQ)
 * [Eternal Flame - The Bangles](https://www.youtube.com/watch?v=PSoOFn3wQV4)
 * [Every Breath You Take](https://www.youtube.com/watch?v=OMOGaugKpzs)
+* [Fallin' - Alicia Keys](https://www.youtube.com/watch?v=Urdlvw0SSEc)
 * [Fast Car - Tracy Chapman](https://www.youtube.com/watch?v=AIOAlaACuv4)
 * [Flower Of Scotland](https://www.youtube.com/watch?v=RPaJhlIIYjM)
 * [For The Love A Princess - Braveheart Soundtrack](https://www.youtube.com/watch?v=fk8323r577w)
@@ -32,6 +33,7 @@
 * [Girls Just Want To Have Fun](https://www.youtube.com/watch?v=PIb6AZdTr-A)
 * [Give Me One Reason - Tracy Chapman](https://www.youtube.com/watch?v=V6hQ9HSKlIE)
 * [Guitar Boogie]
+* [Hallelujah - Leonard Cohen](https://www.youtube.com/watch?v=ttEMYvpoR-k)
 * [Hallelujah - Lindsey Stirling](https://www.youtube.com/watch?v=5VzprYCxPBQ)
 * [Havana - Camila Cabello](https://www.youtube.com/watch?v=BQ0mxQXmLsk)
 * [Heart-Shaped Box - Nirvana from Westworld Season 2](https://www.youtube.com/watch?v=LDS8SeO6hyg)
@@ -92,6 +94,8 @@
 * [Three Times a Lady - The Commodores](https://www.youtube.com/watch?v=3qTPVS1uiQ0)
 * [Total Eclipse of the Heart - Bonnie Tyler](https://www.youtube.com/watch?v=lcOxhH8N3Bo)
 * [Trouble In Mind - Janis Joplin](https://www.youtube.com/watch?v=l0BgJSRGRmc)
+* [Unchained Melody - The Righteous Brothers](https://www.youtube.com/watch?v=qiiyq2xrSI0)
+* [Wanted Dead or Alive - Bon Jovi](https://www.youtube.com/watch?v=SRvCvsRp5ho)
 * [Watermark - Enya](https://www.youtube.com/watch?v=bPCdsa7hS7M)
 * Welcome To The Jungle (Jazzy) - Guns N Roses
 * [With Or Without You - U2](https://www.youtube.com/watch?v=ujNeHIo7oTE)
