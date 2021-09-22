@@ -22,6 +22,7 @@
 * [Creep - Radiohead](https://www.youtube.com/watch?v=XFkzRNyygfk)
 * [Down Under - Men At Work](https://www.youtube.com/watch?v=XfR9iY5y94s)
 * [Elements - Lindsey Stirling](https://www.youtube.com/watch?v=sf6LD2B_kDQ)
+* [Enter Sandman - Metallica](https://www.youtube.com/watch?v=Rmu-YdgA30U)
 * [Eternal Flame - The Bangles](https://www.youtube.com/watch?v=PSoOFn3wQV4)
 * [Every Breath You Take](https://www.youtube.com/watch?v=OMOGaugKpzs)
 * [Fallin' - Alicia Keys](https://www.youtube.com/watch?v=Urdlvw0SSEc)
@@ -44,6 +45,7 @@
 * I Woke Up This Morning
 * [I'm Blue - Eiffel 65](https://www.youtube.com/watch?v=U0fk5L1ifbo)
 * [I'm Yours- Jason Mraz](https://www.youtube.com/watch?v=EkHTsc9PU2A)
+* [In The Mood - Glenn Miller Orchestra](https://www.youtube.com/watch?v=6vOUYry_5Nw)
 * [Into The West - Lord of the Rings: The Return of the King](https://www.youtube.com/watch?v=HvF31-2bVNE)
 * [Ironman - Black Sabbath](https://www.youtube.com/watch?v=8aQRq9hhekA)
 * [Jailhouse Rock - Elvis Presley](https://www.youtube.com/watch?v=gj0Rz-uP4Mk)
