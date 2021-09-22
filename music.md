@@ -58,6 +58,7 @@
 * [L-O-V-E - Nat King Cole](https://www.youtube.com/watch?v=vbqjAHigIgg)
 * [Love Me Tender - Elvis Presley](https://www.youtube.com/watch?v=2lD711_Xh8s)
 * [Mamma's Don't Let Your Babies Grow Up To Be Cowboys - Willie Nelson](https://www.youtube.com/watch?v=ZaWCepCWDyY)
+* [My Immortal - Evanescence](https://www.youtube.com/watch?v=O0Oy1_dcYwQ)
 * [No Holly For Miss Quinn - Enya](https://www.youtube.com/watch?v=dPmu46TpCxs)
 * [No Scrubs - TLC](https://www.youtube.com/watch?v=FrLequ6dUdM)
 * [Nothing Else Matters - Metallica](https://www.youtube.com/watch?v=tAGnKpE4NCI)
