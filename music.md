@@ -1,5 +1,6 @@
 # Ivette's Archeage music list
 
+* [A Thousand Years - ](https://www.youtube.com/watch?v=rtOvBOTyX00)
 * [All About That Bass - Meghan Trainor](https://www.youtube.com/watch?v=7PCkvCPvDXk)
 * [All Of Me - John Legend](https://www.youtube.com/watch?v=450p7goxZqg)
 * [Always On My Mind - Pet Shop Boys](https://www.youtube.com/watch?v=wDe60CbIagg)
@@ -38,6 +39,7 @@
 * [Hallelujah - Lindsey Stirling](https://www.youtube.com/watch?v=5VzprYCxPBQ)
 * [Havana - Camila Cabello](https://www.youtube.com/watch?v=BQ0mxQXmLsk)
 * [Heart-Shaped Box - Nirvana from Westworld Season 2](https://www.youtube.com/watch?v=LDS8SeO6hyg)
+* [Hello - Adele](https://www.youtube.com/watch?v=YQHsXMglC9A)
 * [Here Comes The Rain Again - Eurythmics](https://www.youtube.com/watch?v=TzFnYcIqj6I)
 * [Hey There, Delilah - Plain White T's](https://www.youtube.com/watch?v=h_m-BjrxmgI)
 * [Hotel California - The Eagles](https://www.youtube.com/watch?v=aZHiG6Oua0w)
@@ -83,6 +85,7 @@
 * [Smells Like Teen Spirit - Nirvana](https://www.youtube.com/watch?v=hTWKbfoikeg)
 * [Smoke On The Water - Deep Purple](https://www.youtube.com/watch?v=ikGyZh0VbPQ)
 * Smoke On The Water (Jazzy)
+* [Someone Like You - Adele](https://www.youtube.com/watch?v=hLQl3WQQoQ0)
 * [Song Of Storms - The Legend of Zelda](https://www.youtube.com/watch?v=GpVRNZaLuRc)
 * [Stairway To Heaven - Led Zepplin](https://www.youtube.com/watch?v=QkF3oxziUI4)
 * [Stand By Me - Ben E. King](https://www.youtube.com/watch?v=hwZNL7QVJjE)
