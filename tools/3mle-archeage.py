@@ -18,7 +18,6 @@ args = parser.parse_args()
 # What needs to be done
 # If there are any instances of "l" being used, a new track must default back
 # to "l4" unless it starts with an "l" setting.
-# Any "n" needs to be mapped back to a note with the appropriate octave change
 
 octaves = {"o1": "o2",
            "o2": "o3",
@@ -115,7 +114,7 @@ if not os.path.exists(mle):
 with open(mle) as myfile:
     content = myfile.read()
 
-    content = content.strip("@MML") # Remove MML header
+    content = content.strip("MML@") # Remove MML header
 
     # Use a transform to fix the octaves
     if content.find("o") and not args.nooctave:
