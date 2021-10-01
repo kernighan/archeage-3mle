@@ -15,10 +15,6 @@ args = parser.parse_args()
 # Tool to convert songs made in 3MLE or imported
 # into 3MLE from a MIDI file for use in Archeage.
 
-# What needs to be done
-# If there are any instances of "l" being used, a new track must default back
-# to "l4" unless it starts with an "l" setting.
-
 octaves = {"o1": "o2",
            "o2": "o3",
            "o3": "o4",
@@ -56,9 +52,6 @@ def strstr(strng, replace):
             buf.append(strng[i])
             i += 1
     return ''.join(buf)
-
-def fix_length(content):
-    print("length")
 
 def fix_n_notes(strng):
     notes = ["c","c+","d","d+","e","f","f+","g","g+","a","a+","b"]
@@ -105,6 +98,25 @@ def fix_n_notes(strng):
         i+=1
     return ''.join(buf)
 
+def fix_length(strng):
+    buf, i = [], 0
+    new_track = 0
+    while i < len(strng):
+        if strng[i] == ",":
+            new_track = 1
+            buf.append(strng[i])
+        if strng[i] == "l":
+            new_track = 0
+        if new_track == 1:
+            if bool(re.search(r'[a-gr]',strng[i])) is True:
+                buf.append("l4")
+                buf.append(strng[i])
+                new_track = 0
+        else:
+            buf.append(strng[i])
+        i += 1
+    return ''.join(buf)
+
 mle = args.infile
 
 if not os.path.exists(mle):
@@ -125,10 +137,9 @@ with open(mle) as myfile:
             content = strstr(content, volumes)
 
     if content.find("n"):
-        newcontent = fix_n_notes(content)
+        content = fix_n_notes(content)
 
     if content.find("l"):
-        fix_length(content)
+        content = fix_length(content)
 
 print(content)
-print(newcontent)
