@@ -201,7 +201,10 @@ if cgi_mode:
     print("<title>Converted 3MLE code</title>")
     print("</head>")
     print("<body>")
-    print("%s" % content)
+    if content is not False:
+        print("%s" % content)
+    else:
+        print("No MLE provided")
     print("</body>")
     print("</html>")
 else:
