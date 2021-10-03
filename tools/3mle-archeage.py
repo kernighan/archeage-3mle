@@ -180,17 +180,19 @@ else:
 if content is not False:
     content = content.strip("MML@") # Remove MML header
 
-    # Use a transform to fix the octaves
-    if content.find("o") and not args.nooctave:
-        content = strstr(content, octaves)
-
     # Use a transform to fix the volumes
     if content.find("v") and not args.novolume:
         content = strstr(content, volumes)
 
+    # N notes must be fixed before the octave transform is done
     if content.find("n"):
         content = fix_n_notes(content)
 
+    # Use a transform to fix the octaves
+    if content.find("o") and not args.nooctave:
+        content = strstr(content, octaves)
+
+    # Fix default length in new tracks if it was altered in previous track
     if content.find("l"):
         content = fix_length(content)
 
