@@ -18,21 +18,22 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
 
-import sys
-import os
-import argparse
-import re
-
-parser = argparse.ArgumentParser()
-
-parser.add_argument('--nooctave', action="store_true", help="Skip octave fix")
-parser.add_argument('--novolume', action="store_true", help="Skip volume fix")
-parser.add_argument('-f','--infile', required=True, type=str, help='MLE file to\
-        read in')
-
-args = parser.parse_args()
 # Tool to convert songs made in 3MLE or imported
 # into 3MLE from a MIDI file for use in Archeage.
+
+import sys
+import re
+import os
+
+cgi_mode = False
+
+if bool(re.search(r'\.cgi$',sys.argv[0])) is True:
+    cgi_mode = True
+
+if cgi_mode:
+    import cgi,cgitb
+else:
+    import argparse
 
 octaves = {"o1": "o2",
            "o2": "o3",
@@ -81,7 +82,7 @@ def fix_n_notes(strng):
         if strng[i] == ">":
             curoctave += 1
         if strng[i] == ",":
-            curoctave=4
+            curoctave = 4
         if strng[i] == "o":
             curoctave = int(strng[i+1])
         if strng[i] == "n":
@@ -94,9 +95,9 @@ def fix_n_notes(strng):
                 else:
                     nbuf.extend((strng[i+1],strng[i+2]))
                     inc+=1
-                nbuf = ''.join(nbuf)
             else:
                 nbuf.append(strng[i+1])
+            nbuf = ''.join(nbuf)
             nbuf = int(nbuf)
             text_note = notes[nbuf %12]
             note_octave = nbuf//12
@@ -119,16 +120,27 @@ def fix_n_notes(strng):
 
 def fix_length(strng):
     buf, i = [], 0
+    curlen = 4
     new_track = 0
     while i < len(strng):
         if strng[i] == ",":
             new_track = 1
             buf.append(strng[i])
         if strng[i] == "l":
-            new_track = 0
+            lbuf = []
+            if new_track == 1:
+                new_track = 0
+            if strng[i+2].isdigit():
+                lbuf.extend((strng[i+1],strng[i+2]))
+            else:
+                lbuf.append(strng[i+1])
+            lbuf = ''.join(lbuf)
+            curlen = int(lbuf)
         if new_track == 1:
             if bool(re.search(r'[a-gr]',strng[i])) is True:
-                buf.append("l4")
+                if curlen != 4:
+                    buf.append("l4")
+                    curlen = 4
                 buf.append(strng[i])
                 new_track = 0
         else:
@@ -136,24 +148,45 @@ def fix_length(strng):
         i += 1
     return ''.join(buf)
 
-mle = args.infile
+content = ''
+if cgi_mode:
+    form = cgi.FieldStorage()
 
-if not os.path.exists(mle):
-    print("Error: File " + mle + " does not exist")
-    sys.exit()
+    if form.getvalue('nooctave'):
+        nooctave = True
+    if form.getvalue('novolume'):
+        novolume = True
+    if form.getvalue('mle'):
+        content = form.getvalue('mle')
+    else:
+        content = False
+else:
+    parser = argparse.ArgumentParser()
 
-with open(mle) as myfile:
-    content = myfile.read()
+    parser.add_argument('--nooctave', action="store_true", help="Skip octave fix")
+    parser.add_argument('--novolume', action="store_true", help="Skip volume fix")
+    parser.add_argument('-f','--infile', required=True, type=str, help='MLE file to\
+                        read in')
 
+    args = parser.parse_args()
+    mle = args.infile
+    if not os.path.exists(mle):
+        print("Error: File " + mle + " does not exist")
+        sys.exit()
+
+    with open(mle) as myfile:
+        content = myfile.read()
+
+if content is not False:
     content = content.strip("MML@") # Remove MML header
 
     # Use a transform to fix the octaves
     if content.find("o") and not args.nooctave:
-            content = strstr(content, octaves)
+        content = strstr(content, octaves)
 
     # Use a transform to fix the volumes
     if content.find("v") and not args.novolume:
-            content = strstr(content, volumes)
+        content = strstr(content, volumes)
 
     if content.find("n"):
         content = fix_n_notes(content)
@@ -161,4 +194,15 @@ with open(mle) as myfile:
     if content.find("l"):
         content = fix_length(content)
 
-print(content)
+if cgi_mode:
+    print("Content-type:text\r\n\r\n")
+    print("<html>")
+    print("<head>")
+    print("<title>Converted 3MLE code</title>")
+    print("</head>")
+    print("<body>")
+    print("%s" % content)
+    print("</body>")
+    print("</html>")
+else:
+    print(content)
