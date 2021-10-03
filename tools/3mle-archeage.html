@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>3MLE to Archeage converter</title>
+	</head>
+	<body>
+		<h2>3MLE to Archeage converter</h2>
+		<p>This utilty takes code exported from 3MLE and fixes it for use in Archeage</p>
+		<p>Steps taken are:<br>
+		<ul>
+			<li>Converts octaves to be correct unless nooctave is checked</li>
+			<li>Converts velocity (volume) from Mabiogi levels to AAU levels unless novolume is checked</li>
+			<li>Converts N notes created by 3MLE optimization to their correct note with octave offset</li>
+			<li>Fixes note length at the start of new tracks if needed</li>
+		</ul>
+		<form action = "/cgi-bin/3mle-archeage.cgi" method = "POST" target = "_blank">
+			<input type = "checkbox" name = nooctave value = "off" />
+			<input type = "checkbox" name = novolume value = "off" />
+			<textarea name = "mle" cols = "76" rows = "10"></textarea>
+			<br>
+			<input type = "submit" value = "Submit" />
+		</form>
+	</body>
+</html>
