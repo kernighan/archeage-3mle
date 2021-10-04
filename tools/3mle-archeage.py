@@ -125,7 +125,6 @@ def fix_length(strng):
     while i < len(strng):
         if strng[i] == ",":
             new_track = 1
-            buf.append(strng[i])
         if strng[i] == "l":
             lbuf = []
             if new_track == 1:
@@ -137,12 +136,14 @@ def fix_length(strng):
             lbuf = ''.join(lbuf)
             curlen = int(lbuf)
         if new_track == 1:
-            if bool(re.search(r'[a-gr]',strng[i])) is True:
+            if bool(re.search(r'[a-gr]',strng[i])) is True and not strng[i+1].isdigit():
                 if curlen != 4:
                     buf.append("l4")
                     curlen = 4
                 buf.append(strng[i])
                 new_track = 0
+            else:
+                buf.append(strng[i])
         else:
             buf.append(strng[i])
         i += 1
