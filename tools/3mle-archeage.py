@@ -204,9 +204,11 @@ if cgi_mode:
     print("</head>")
     print("<body>")
     if content is not False:
+        print("<code>")
         print("%s" % content)
+        print("/<code>")
     else:
-        print("No MLE provided")
+        print("<p>No MLE provided</p>")
     print("</body>")
     print("</html>")
 else:
