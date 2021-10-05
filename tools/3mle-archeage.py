@@ -136,12 +136,25 @@ def fix_length(strng):
             lbuf = ''.join(lbuf)
             curlen = int(lbuf)
         if new_track == 1:
-            if bool(re.search(r'[a-gr]',strng[i])) is True and not strng[i+1].isdigit():
-                if curlen != 4:
-                    buf.append("l4")
-                    curlen = 4
-                buf.append(strng[i])
-                new_track = 0
+            if bool(re.search(r'[a-gr]',strng[i])) is True:
+                if bool(re.search(r'[-\+]',strng[i+1])):
+                    if not strng[i+2].isdigit():
+                        print("In plus min")
+                        if curlen != 4:
+                            buf.append("l4")
+                            curlen = 4
+                        buf.append(strng[i])
+                        new_track = 0
+                    else:
+                        buf.append(strng[i])
+                elif not strng[i+1].isdigit():
+                    if curlen != 4:
+                        buf.append("l4")
+                        curlen = 4
+                    buf.append(strng[i])
+                    new_track = 0
+                else:
+                    buf.append(strng[i])
             else:
                 buf.append(strng[i])
         else:
@@ -166,12 +179,12 @@ else:
 
     parser.add_argument('--nooctave', action="store_true", help="Skip octave fix")
     parser.add_argument('--novolume', action="store_true", help="Skip volume fix")
-    parser.add_argument('-f','--infile', type=str, help='MLE file to\
+    parser.add_argument('-f','--infile', type=str, help='MML file to\
                         read in')
 
     args = parser.parse_args()
     if not args.infile:
-        content = str(input("Enter MLE code:\n"))
+        content = str(input("Enter MML code:\n"))
 
     else:
         mle = args.infile
@@ -205,7 +218,7 @@ if cgi_mode:
     print("Content-type:text\r\n\r\n")
     print("<html>")
     print("<head>")
-    print("<title>Converted 3MLE code</title>")
+    print("<title>Converted MML code</title>")
     print("</head>")
     print("<body>")
     if content is not False:
@@ -213,7 +226,7 @@ if cgi_mode:
         print("%s" % content)
         print("/<code>")
     else:
-        print("<p>No MLE provided</p>")
+        print("<p>No MML provided</p>")
     print("</body>")
     print("</html>")
 else:
