@@ -14,6 +14,7 @@ When run locally via the command line, it can take the following options:
 
 
 To use on Windows 10:
+
 1. Download the python script somewhere
 2. Start a command prompt window
 3. Change to the diretory where the script is
