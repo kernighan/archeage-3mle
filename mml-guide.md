@@ -1,10 +1,19 @@
 General notes on using MML in archeage
 
-* If 64th notes are present, the tempo must be divisbile by 6. This includes dotted 32nd notes or staccato 32nd notes. It is suggested when importing a MIDI into 3MLE to use 1/64th note Quantization.
+* If 32nd notes are present, the tempo must be divisbile by 6. It is suggested when importing a MIDI into 3MLE to use 1/64th note Quantization.
 
 * Default archeage volume is 100 (v100).  Max is 127 (v127).
 
-*  Volume conversion: 3mle = archeage
+* Max tempo is 259 for Archeage
+
+* Any tempo changes must only be done in the first track.  All other tracks will inherit them automatically.  If there are tracks outside of track one that do tempo changes, good luck.
+
+* Arpeggiated chords can generally be represented by using 32nd note rests between each member of the chord.  The lowest note would have its full length, the second note would start with a 32nd note rest, followed by the rest of the duration, the 3rd note with a 16th note rest (32nd rest twice) and then the rest of the duration, etc.  These obviously take one track per note, so a 3-note arpeggiated chord requires 3 tracks.  This works well with eigth note up to whole note arpeggiated chords.  For 16th note arpeggiated chords, 64th note rests need to be used.
+
+
+The following items can be fixed using the 3mle-archeage.py script in the [tools](https://bitbucket.org/yunohu/music-list/src/main/tools/) directory. See the documentation there.
+
+*  Volume (velocity) conversion from 3MLE to Archeage:
 
 | 3MLE | Archeage |
 | ---- | -------- |
@@ -29,11 +38,4 @@ General notes on using MML in archeage
 
 * All explicitly written octaves in the 3MLE code must be increased by 1.  I.e., if 3MLE exports "o4", change this to "o5" for archeage.
 
-* Max tempo is 259 for Archeage
-
-* Any tempo changes must only be done in the first track.  All other tracks will inherit them automatically.  If there are tracks outside of track one that do tempo changes, good luck.
-
-* Archeage does not work with optimized "n" notes.  These need to be converted back to the corresponding note. A simple program can do this, if you have a zero based array that goes starts with "c" and goes up to "b".  The converted n note is the modulus 12 of the number.  I.e., n32 is g+ (32 % 12 = 8). 8 is the 9th element of a zero based array, which would be g sharp/a flat. See the tools/midi-note.pl perl script as an example.
-
-* Arpeggiated chords can generally be represented by using 32nd note rests between each member of the chord.  The lowest note would have its full length, the second note would start with a 32nd note rest, followed by the rest of the duration, the 3rd note with a 16th note rest (32nd rest twice) and then the rest of the duration, etc.  These obviously take one track per note, so a 3-note arpeggiated chord requires 3 tracks.  This works well with eigth note up to whole note arpeggiated chords.  For 16th note arpeggiated chords, 64th note rests need to be used.
-
+* Archeage does not work with optimized "n" notes.  These need to be converted back to the corresponding note. A simple program can do this, if you have a zero based array that goes starts with "c" and goes up to "b".  The converted n note is the modulus 12 of the number.  I.e., n32 is g+ (32 % 12 = 8). 8 is the 9th element of a zero based array, which would be g sharp/a flat.
