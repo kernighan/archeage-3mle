@@ -30,3 +30,5 @@ Other files in this directory:
 1. length-test.txt, length-fixed.txt - MML to test the length fix done by 3mle-archeage.py
 2. macarena-opt.txt, macarena-no-octave.txt, macarena-octave.txt - MML to test the "n" note conversions and if the octave conversion is done correctly.
 3. midi-note.pl, midi-note.py - Scripts to convert "n" notes to their corresponding MML note. Obsoleted by 3mle-archeage.py
+
+See the [MML guide](mml-guide.md) for additional tips and tricks
