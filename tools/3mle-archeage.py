@@ -166,17 +166,21 @@ else:
 
     parser.add_argument('--nooctave', action="store_true", help="Skip octave fix")
     parser.add_argument('--novolume', action="store_true", help="Skip volume fix")
-    parser.add_argument('-f','--infile', required=True, type=str, help='MLE file to\
+    parser.add_argument('-f','--infile', type=str, help='MLE file to\
                         read in')
 
     args = parser.parse_args()
-    mle = args.infile
-    if not os.path.exists(mle):
-        print("Error: File " + mle + " does not exist")
-        sys.exit()
+    if not args.infile:
+        content = str(input("Enter MLE code:\n"))
 
-    with open(mle) as myfile:
-        content = myfile.read()
+    else:
+        mle = args.infile
+        if not os.path.exists(mle):
+            print("Error: File " + mle + " does not exist")
+            sys.exit()
+
+        with open(mle) as myfile:
+            content = myfile.read()
 
 if content is not False:
     content = content.strip("MML@") # Remove MML header
