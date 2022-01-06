@@ -27,6 +27,9 @@ import os
 
 cgi_mode = False
 
+__version__ = "1.0.1"
+__version_info__ = tuple([ int(num) for num in __version__.split('.')])
+
 if bool(re.search(r'\.cgi$',sys.argv[0])) is True:
     cgi_mode = True
 
@@ -43,22 +46,6 @@ octaves = {"o1": "o2",
            "o6": "o7",
            "o7": "o8"}
 
-volumes = {"v0": "v0",
-           "v1": "v9",
-           "v2": "v18",
-           "v3": "v26",
-           "v4": "v35",
-           "v5": "v43",
-           "v6": "v51",
-           "v7": "v60",
-           "v8": "v68",
-           "v9": "v76",
-           "v10": "v85",
-           "v11": "v93",
-           "v12": "v101",
-           "v13": "v110",
-           "v14": "v118",
-           "v15": "v127"}
 
 def strstr(strng, replace):
     buf, i = [], 0
@@ -139,7 +126,6 @@ def fix_length(strng):
             if bool(re.search(r'[a-gr]',strng[i])) is True:
                 if bool(re.search(r'[-\+]',strng[i+1])):
                     if not strng[i+2].isdigit():
-                        print("In plus min")
                         if curlen != 4:
                             buf.append("l4")
                             curlen = 4
@@ -162,6 +148,67 @@ def fix_length(strng):
         i += 1
     return ''.join(buf)
 
+def fix_volume(strng):
+    buf, i = [], 0
+    while i < len(strng):
+        if strng[i] == 'v':
+            inc = 1
+            vbuf = []
+            if strng[i+2].isdigit():
+                if strng[i+3].isdigit():
+                    vbuf.extend((strng[i],strng[i+1],strng[i+2],strng[i+3]))
+                    vbuf = ''.join(vbuf)
+                    buf.append(vbuf)
+                    i+=4
+                    continue
+                else:
+                    vbuf.extend((strng[i+1],strng[i+2]))
+                    inc+=1
+            else:
+                vbuf.append(strng[i+1])
+            vbuf = ''.join(vbuf)
+            volume = int (vbuf)
+            if volume == 15:
+                buf.append("v127")
+            if volume == 14:
+                buf.append("v118")
+            if volume == 13:
+                buf.append("v110")
+            if volume == 12:
+                buf.append("v101")
+            if volume == 11:
+                buf.append("v93")
+            if volume == 10:
+                buf.append("v85")
+            if volume == 9:
+                buf.append("v76")
+            if volume == 8:
+                buf.append("v68")
+            if volume == 7:
+                buf.append("v60")
+            if volume == 6:
+                buf.append("v51")
+            if volume == 5:
+                buf.append("v43")
+            if volume == 4:
+                buf.append("v35")
+            if volume == 3:
+                buf.append("v26")
+            if volume == 2:
+                buf.append("v18")
+            if volume == 1:
+                buf.append("v9")
+            if volume == 0:
+                buf.append("v0")
+            else:
+                buf.append(strng[i])
+                buf.append(vbuf)
+            i+=inc
+        else:
+            buf.append(strng[i])
+        i += 1
+    return ''.join(buf)
+
 content = ''
 if cgi_mode:
     form = cgi.FieldStorage()
@@ -177,6 +224,8 @@ if cgi_mode:
 else:
     parser = argparse.ArgumentParser()
 
+    parser.add_argument('-v','--version', action='version',
+                    version='%(prog)s {version}'.format(version=__version__))
     parser.add_argument('--nooctave', action="store_true", help="Skip octave fix")
     parser.add_argument('--novolume', action="store_true", help="Skip volume fix")
     parser.add_argument('-f','--infile', type=str, help='MML file to\
@@ -199,19 +248,20 @@ if content is not False:
     content = content.strip("MML@") # Remove MML header
 
     # Use a transform to fix the volumes
-    if content.find("v") and not args.novolume:
-        content = strstr(content, volumes)
+    if content.find("v") > -1 and not args.novolume:
+        #content = strstr(content, volumes)
+        content = fix_volume(content)
 
     # N notes must be fixed before the octave transform is done
-    if content.find("n"):
+    if content.find("n") > -1:
         content = fix_n_notes(content)
 
     # Use a transform to fix the octaves
-    if content.find("o") and not args.nooctave:
+    if content.find("o") > -1 and not args.nooctave:
         content = strstr(content, octaves)
 
     # Fix default length in new tracks if it was altered in previous track
-    if content.find("l"):
+    if content.find("l") > -1:
         content = fix_length(content)
 
 if cgi_mode:
