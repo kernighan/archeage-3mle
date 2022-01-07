@@ -13,7 +13,7 @@ When run locally via the command line, it can take the following options:
 1. --version - This will print the current version of the program
 2. --nooctave - This will disable fixing the octaves in the song for Archeage. It is not advised to use this option.
 3. --novolume - This will disable remapping Mabinogi velocities (volumes) for use with Archeage. It is not advised to use this option.
-4. --volinc <integer> - Increase the Mabinogi velocity (volume) by the provided integer before remapping them.
+4. --volinc <integer> - Change the Mabinogi velocity (volume) by the provided integer before remapping them. A positive integer will increase the velocities, a negative integer will decrease them.
 5. --infile <file> - A file with the MML code to read in for processing.  If this option is not specified, a prompt for the MML will be used instead.
 
 
