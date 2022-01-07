@@ -27,7 +27,7 @@ import os
 
 cgi_mode = False
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __version_info__ = tuple([ int(num) for num in __version__.split('.')])
 
 if bool(re.search(r'\.cgi$',sys.argv[0])) is True:
@@ -170,35 +170,35 @@ def fix_volume(strng):
             volume = int (vbuf)
             if volume == 15:
                 buf.append("v127")
-            if volume == 14:
+            elif volume == 14:
                 buf.append("v118")
-            if volume == 13:
+            elif volume == 13:
                 buf.append("v110")
-            if volume == 12:
+            elif volume == 12:
                 buf.append("v101")
-            if volume == 11:
+            elif volume == 11:
                 buf.append("v93")
-            if volume == 10:
+            elif volume == 10:
                 buf.append("v85")
-            if volume == 9:
+            elif volume == 9:
                 buf.append("v76")
-            if volume == 8:
+            elif volume == 8:
                 buf.append("v68")
-            if volume == 7:
+            elif volume == 7:
                 buf.append("v60")
-            if volume == 6:
+            elif volume == 6:
                 buf.append("v51")
-            if volume == 5:
+            elif volume == 5:
                 buf.append("v43")
-            if volume == 4:
+            elif volume == 4:
                 buf.append("v35")
-            if volume == 3:
+            elif volume == 3:
                 buf.append("v26")
-            if volume == 2:
+            elif volume == 2:
                 buf.append("v18")
-            if volume == 1:
+            elif volume == 1:
                 buf.append("v9")
-            if volume == 0:
+            elif volume == 0:
                 buf.append("v0")
             else:
                 buf.append(strng[i])
