@@ -2,6 +2,8 @@ Tools for use with Archeage and 3MLE
 
 There are several tools here, but only one is really needed, [3mle-archeage.py](https://raw.githubusercontent.com/kernighan/archeage-3mle/main/3mle-archeage.py).
 
+Current version: 1.0.1, released January 6, 2022
+
 The 3mle-archeage.py (3mle-archeage.cgi) is a python3 script that takes MML as exported in 3MLE via the "Export MML to clipboard" option from the File menu and converts it for use with Archeage (legacy or unchained).  It is expected that the supplied MML is a single continuous block of all the tracks, which means some editing will be necessary if there are more than 3 tracks to the song, since 3MLE will only export 3 tracks at a time.
 
 If the script is installed with the name "3mle-archeage.cgi" it will act as a CGI script for a webserver.  The 3mle-archeage.html file is an example HTML form page that can be used to take input for processing.  This has not yet been tested, feel free to report issues if attempting to set this up on a webserver.
