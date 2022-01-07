@@ -27,7 +27,7 @@ import os
 
 cgi_mode = False
 
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 __version_info__ = tuple([ int(num) for num in __version__.split('.')])
 
 if bool(re.search(r'\.cgi$',sys.argv[0])) is True:
@@ -168,6 +168,10 @@ def fix_volume(strng):
                 vbuf.append(strng[i+1])
             vbuf = ''.join(vbuf)
             volume = int (vbuf)
+            if args.volinc:
+                volume += args.volinc
+                if volume > 15:
+                    volume = 15
             if volume == 15:
                 buf.append("v127")
             elif volume == 14:
@@ -228,6 +232,8 @@ else:
                     version='%(prog)s {version}'.format(version=__version__))
     parser.add_argument('--nooctave', action="store_true", help="Skip octave fix")
     parser.add_argument('--novolume', action="store_true", help="Skip volume fix")
+    parser.add_argument('--volinc', type=int, help="Increment Mabi volumes by\
+                        this value")
     parser.add_argument('-f','--infile', type=str, help='MML file to\
                         read in')
 
