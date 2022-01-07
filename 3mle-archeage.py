@@ -172,6 +172,8 @@ def fix_volume(strng):
                 volume += args.volinc
                 if volume > 15:
                     volume = 15
+                elif volume < 0:
+                    volume = 0
             if volume == 15:
                 buf.append("v127")
             elif volume == 14:
