@@ -24,8 +24,8 @@ The following items are all fixed by using the [3mle-archeage.py script](https:/
 | v2   | v18      | ppp    |
 | v3   | v26      |        |
 | v4   | v35      | pp     |
-| v5   | v43      | p      |
-| v6   | v51      |        |
+| v5   | v43      |        |
+| v6   | v51      | p      |
 | v7   | v60      | mp     |
 | v8   | v68      |        |
 | v9   | v76      | mf     |
