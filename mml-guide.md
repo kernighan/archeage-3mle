@@ -15,7 +15,7 @@ General notes on using MML in archeage
 
 The following items are all fixed by using the [3mle-archeage.py script](https://raw.githubusercontent.com/kernighan/archeage-3mle/main/3mle-archeage.py) script to process MML exported by 3MLE in Mabinogi format. The documentation is in the [README](README.md) file.
 
-*  Volume (velocity) conversion from 3MLE to Archeage along with musical dynamics notation:
+*  Volume (velocity) conversion from 3MLE to Archeage along with [musical dynamics notation](https://nickleusmusic.blogspot.com/2013/07/midi-dynamics-note-velocity-values-for.html):
 
 | 3MLE | Archeage |Notation|
 | ---- | -------- |--------|
