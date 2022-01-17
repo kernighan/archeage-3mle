@@ -15,26 +15,26 @@ General notes on using MML in archeage
 
 The following items are all fixed by using the [3mle-archeage.py script](https://raw.githubusercontent.com/kernighan/archeage-3mle/main/3mle-archeage.py) script to process MML exported by 3MLE in Mabinogi format. The documentation is in the [README](README.md) file.
 
-*  Volume (velocity) conversion from 3MLE to Archeage:
+*  Volume (velocity) conversion from 3MLE to Archeage along with musical dynamics notation:
 
-| 3MLE | Archeage |
-| ---- | -------- |
-| v0   | v0       |
-| v1   | v9       |
-| v2   | v18      |
-| v3   | v26      |
-| v4   | v35      |
-| v5   | v43      |
-| v6   | v51      |
-| v7   | v60      |
-| v8   | v68      |
-| v9   | v76      |
-| v10  | v85      |
-| v11  | v93      |
-| v12  | v101     |
-| v13  | v110     |
-| v14  | v118     |
-| v15  | v127     |
+| 3MLE | Archeage |Notation|
+| ---- | -------- |--------|
+| v0   | v0       |        |
+| v1   | v9       |        |
+| v2   | v18      | ppp    |
+| v3   | v26      |        |
+| v4   | v35      | pp     |
+| v5   | v43      | p      |
+| v6   | v51      |        |
+| v7   | v60      | mp     |
+| v8   | v68      |        |
+| v9   | v76      | mf     |
+| v10  | v85      |        |
+| v11  | v93      | f      |
+| v12  | v101     |        |
+| v13  | v110     | ff     |
+| v14  | v118     |        |
+| v15  | v127     | fff    |
 
 * Default note length is 4 (l4).  If any track changes the length, all following tracks inherit that length. 3MLE assumes that following tracks default back to l4, but archeage does not. So when optimizing, it's critical to start any track following a note length change with l4 if it doesn't start with a length.
 
