@@ -177,33 +177,33 @@ def fix_volume(strng):
             if volume == 15:
                 buf.append("v127")
             elif volume == 14:
-                buf.append("v118")
+                buf.append("v112")
             elif volume == 13:
-                buf.append("v110")
+                buf.append("v104")
             elif volume == 12:
-                buf.append("v101")
+                buf.append("v96")
             elif volume == 11:
-                buf.append("v93")
+                buf.append("v88")
             elif volume == 10:
-                buf.append("v85")
+                buf.append("v80")
             elif volume == 9:
-                buf.append("v76")
+                buf.append("v72")
             elif volume == 8:
-                buf.append("v68")
+                buf.append("v64")
             elif volume == 7:
-                buf.append("v60")
+                buf.append("v56")
             elif volume == 6:
-                buf.append("v51")
+                buf.append("v48")
             elif volume == 5:
-                buf.append("v43")
+                buf.append("v40")
             elif volume == 4:
-                buf.append("v35")
+                buf.append("v32")
             elif volume == 3:
-                buf.append("v26")
+                buf.append("v24")
             elif volume == 2:
-                buf.append("v18")
+                buf.append("v16")
             elif volume == 1:
-                buf.append("v9")
+                buf.append("v8")
             elif volume == 0:
                 buf.append("v0")
             else:
