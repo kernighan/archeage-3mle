@@ -27,7 +27,7 @@ import os
 
 cgi_mode = False
 
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 __version_info__ = tuple([ int(num) for num in __version__.split('.')])
 
 if bool(re.search(r'\.cgi$',sys.argv[0])) is True:
@@ -38,14 +38,22 @@ if cgi_mode:
 else:
     import argparse
 
-octaves = {"o1": "o2",
+octaves = {"o0": "o1",
+           "o1": "o2",
            "o2": "o3",
            "o3": "o4",
            "o4": "o5",
            "o5": "o6",
            "o6": "o7",
-           "o7": "o8"}
+           "o7": "o8",
+           "o8": "o9"}
 
+octaveArray = ["o0","o1","o2","o3","o4","o5","o6","o7","o8","o9"]
+
+volumes = ["v0","v8","v16","v24",
+           "v32","v40","v48","v56",
+           "v64","v72","v80","v88",
+           "v96","v104","v112","v127"]
 
 def strstr(strng, replace):
     buf, i = [], 0
@@ -148,6 +156,76 @@ def fix_length(strng):
         i += 1
     return ''.join(buf)
 
+def inc_octaves(strng):
+    buf, i = [], 0
+    new_track = 1
+    while i < len(strng):
+        if strng[i] == ",":
+            new_track = 1
+        if strng[i] == "o":
+            obuf = []
+            obuf.append(strng[i+1])
+            obuf = ''.join(obuf)
+            octave = int (obuf)
+            octave += args.octaveinc
+            if new_track == 1:
+                new_track = 0
+                if octave == 4:
+                    buf.append("<")
+                elif octave == 6:
+                    buf.append(">")
+                elif octave != 5:
+                    buf.append(octaveArray[octave])
+            else:
+                buf.append(octaveArray[octave])
+            i += 1
+        elif new_track == 1 and re.search(r'[a-g]', strng[i]):
+            new_track = 0
+            octave = 5 + args.octaveinc
+            if octave == 4:
+                buf.append("<")
+            elif octave == 6:
+                buf.append(">")
+            elif octave != 5:
+                buf.append(octaveArray[octave])
+            buf.append(strng[i])
+        elif new_track == 1 and strng[i] == ">":
+            new_track = 0
+            base_oct = 6
+            if strng[i+2] == ">":
+                base_oct = 8
+                i += 2
+            elif strng[i+1] == ">":
+                base_oct = 7
+                i += 1
+            octave = base_oct + args.octaveinc
+            if octave == 4:
+                buf.append("<")
+            elif octave == 6:
+                buf.append(">")
+            elif octave != 5:
+                buf.append(octaveArray[octave])
+        elif new_track == 1 and strng[i] == "<":
+            new_track = 0
+            base_oct = 4
+            if strng[i+2] == "<":
+                base_oct = 2
+                i += 2
+            elif strng[i+1] == "<":
+                base_oct = 3
+                i += 1
+            octave = base_oct + args.octaveinc
+            if octave == 4:
+                buf.append("<")
+            elif octave == 6:
+                buf.append(">")
+            elif octave != 5:
+                buf.append(octaveArray[octave])
+        else:
+            buf.append(strng[i])
+        i += 1
+    return ''.join(buf)
+
 def fix_volume(strng):
     buf, i = [], 0
     while i < len(strng):
@@ -174,38 +252,8 @@ def fix_volume(strng):
                     volume = 15
                 elif volume < 0:
                     volume = 0
-            if volume == 15:
-                buf.append("v127")
-            elif volume == 14:
-                buf.append("v112")
-            elif volume == 13:
-                buf.append("v104")
-            elif volume == 12:
-                buf.append("v96")
-            elif volume == 11:
-                buf.append("v88")
-            elif volume == 10:
-                buf.append("v80")
-            elif volume == 9:
-                buf.append("v72")
-            elif volume == 8:
-                buf.append("v64")
-            elif volume == 7:
-                buf.append("v56")
-            elif volume == 6:
-                buf.append("v48")
-            elif volume == 5:
-                buf.append("v40")
-            elif volume == 4:
-                buf.append("v32")
-            elif volume == 3:
-                buf.append("v24")
-            elif volume == 2:
-                buf.append("v16")
-            elif volume == 1:
-                buf.append("v8")
-            elif volume == 0:
-                buf.append("v0")
+            if volume >= 0 and volume <= 15:
+                buf.append(volumes[volume])
             else:
                 buf.append(strng[i])
                 buf.append(vbuf)
@@ -234,7 +282,9 @@ else:
                     version='%(prog)s {version}'.format(version=__version__))
     parser.add_argument('--nooctave', action="store_true", help="Skip octave fix")
     parser.add_argument('--novolume', action="store_true", help="Skip volume fix")
-    parser.add_argument('--volinc', type=int, help="Increment Mabi volumes by\
+    parser.add_argument('--volinc', type=int, help="Decrement/Increment Mabi volumes by\
+                        this value")
+    parser.add_argument('--octaveinc', type=int, help="Decrement/Increment octave by\
                         this value")
     parser.add_argument('-f','--infile', type=str, help='MML file to\
                         read in')
@@ -255,9 +305,8 @@ else:
 if content is not False:
     content = content.strip("MML@") # Remove MML header
 
-    # Use a transform to fix the volumes
+    # Fix the volumes
     if content.find("v") > -1 and not args.novolume:
-        #content = strstr(content, volumes)
         content = fix_volume(content)
 
     # N notes must be fixed before the octave transform is done
@@ -267,6 +316,10 @@ if content is not False:
     # Use a transform to fix the octaves
     if content.find("o") > -1 and not args.nooctave:
         content = strstr(content, octaves)
+
+    # Adjust octaves if requested
+    if args.nooctave and args.octaveinc:
+        content = inc_octaves(content)
 
     # Fix default length in new tracks if it was altered in previous track
     if content.find("l") > -1:
