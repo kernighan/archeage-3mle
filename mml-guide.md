@@ -53,3 +53,13 @@ The following items are all fixed by using the [3mle-archeage.py script](https:/
 However, 3MLE will import this as:
 
 > a16&a64b16.c16&c64
+
+* 3MLE will sometimes create an optimization like:
+
+> b&l16b
+
+This does not work in Archeage, and must be rewritten as:
+
+> b&b16l16
+
+Until the script is fixed to handle this special case
