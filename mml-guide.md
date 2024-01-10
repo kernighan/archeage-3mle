@@ -21,6 +21,8 @@ General notes on using MML in Archeage
     //#using_channel = 10
 ```
 
+Use this [percussion map](https://computermusicresource.com/GM.Percussion.KeyMap.html) to help with creating drum tracks.
+
 The following items are all fixed by using the [3mle-archeage.py script](https://raw.githubusercontent.com/kernighan/archeage-3mle/main/3mle-archeage.py) script to process MML exported by 3MLE in Mabinogi format. The documentation is in the [README](README.md) file.
 
 *  Volume (velocity) conversion from 3MLE to Archeage along with [musical dynamics notation](https://en.wikipedia.org/wiki/Dynamics_%28music%29#Interpretation_by_notation_programs)
