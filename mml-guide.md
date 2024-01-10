@@ -16,8 +16,10 @@ General notes on using MML in Archeage
 
 * To create a drum track in 3MLE, add the following literal text to the first lines of the track:
 
+```
     //#using_extension
     //#using_channel = 10
+```
 
 The following items are all fixed by using the [3mle-archeage.py script](https://raw.githubusercontent.com/kernighan/archeage-3mle/main/3mle-archeage.py) script to process MML exported by 3MLE in Mabinogi format. The documentation is in the [README](README.md) file.
 
