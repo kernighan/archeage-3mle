@@ -6,11 +6,13 @@ General notes on using MML in Archeage
 
 * Max tempo is 259 for Archeage
 
-* Any tempo changes must only be done in the first track.  All other tracks will inherit them automatically.  If there are tracks outside of track one that do tempo changes, good luck.
+* Any tempo changes must only be done in the first track.  All other tracks will inherit them automatically.  If a tempo change is done outside of the first track, good luck as it will have odd consequences.
 
-* Arpeggiated chords can generally be represented by using 64th note rests between each member of the chord.  The lowest note would have its full length, the second note would start with a 64th note rest, followed by the rest of the duration, the 3rd note with a 32nd note rest (64th rest twice) and then the rest of the duration, etc.  These obviously take one track per note, so a 3-note arpeggiated chord requires 3 tracks.  This works well with sixtheen note up to whole note arpeggiated chords.
+* Arpeggiated chords can generally be represented by using 64th note rests between each member of the chord.  The lowest note would have its full length, the second note would start with a 64th note rest, followed by the rest of the duration, the 3rd note with a 32nd note rest (64th rest twice) and then the rest of the duration, etc.  These obviously take one track per note, so a 3-note arpeggiated chord requires 3 tracks.  This works well with sixteenth note up to whole note arpeggiated chords.
 
 * A trill is best done as 64th notes for the duration of the trilled note. Note that up until the time of Mozart and Haydn, a trill starts on the next higher note and drops to the trilled note in this rapid succession.  After that time, it starts on the indicated note and raises to the next higher note in rapid succession.
+
+* Here is information on how to [represent tuplets](tuplets.md) properly in MML.
 
 # 3MLE
 
