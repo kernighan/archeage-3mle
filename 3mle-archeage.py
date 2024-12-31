@@ -27,7 +27,7 @@ import os
 
 cgi_mode = False
 
-__version__ = "1.0.4"
+__version__ = "1.0.5"
 __version_info__ = tuple([ int(num) for num in __version__.split('.')])
 
 if bool(re.search(r'\.cgi$',sys.argv[0])) is True:
@@ -50,10 +50,10 @@ octaves = {"o0": "o1",
 
 octaveArray = ["o0","o1","o2","o3","o4","o5","o6","o7","o8","o9"]
 
-volumes = ["v0","v8","v16","v24",
-           "v32","v40","v48","v56",
-           "v64","v72","v80","v88",
-           "v96","v104","v112","v127"]
+volumes = ["v0","v10","v20","v30",
+           "v35","v40","v50","v60",
+           "v70","v76","v85","v90",
+           "v100","v110","v120","v127"]
 
 def strstr(strng, replace):
     buf, i = [], 0

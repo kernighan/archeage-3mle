@@ -32,20 +32,20 @@ The following items are all fixed by using the [3mle-archeage.py script](https:/
 | 3MLE | Archeage |Notation|
 | ---- | -------- |--------|
 | v0   | v0       |        |
-| v1   | v8       |        |
-| v2   | v16      | ppp    |
-| v3   | v24      |        |
-| v4   | v32      | pp     |
+| v1   | v10      |        |
+| v2   | v20      | ppp    |
+| v3   | v30      |        |
+| v4   | v35      | pp     |
 | v5   | v40      |        |
-| v6   | v48      | p      |
-| v7   | v56      |        |
-| v8   | v64      | mp     |
-| v9   | v72      |        |
-| v10  | v80      | mf     |
-| v11  | v88      |        |
-| v12  | v96      | f      |
-| v13  | v104     |        |
-| v14  | v112     | ff     |
+| v6   | v50      | p      |
+| v7   | v60      |        |
+| v8   | v70      | mp     |
+| v9   | v76      |        |
+| v10  | v85      | mf     |
+| v11  | v90      |        |
+| v12  | v100     | f      |
+| v13  | v110     |        |
+| v14  | v120     | ff     |
 | v15  | v127     | fff    |
 
 * Default note length is 4 (l4).  If any track changes the length, all following tracks inherit that length. 3MLE assumes that following tracks default back to l4, but Archeage does not. So when optimizing, it's critical to start any track following a note length change with l4 if it doesn't start with a length.
